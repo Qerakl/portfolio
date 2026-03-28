@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Герман: веб и мобильные продукты с 2021 года. Laravel, Vue, Flutter, Docker, Nginx.">
+  <meta name="theme-color" content="#05070f">
+  <title>Веб и мобильная разработка · Герман</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержимому</a>
+  <div class="page-deco" aria-hidden="true">
+    <span class="page-grid"></span>
+    <span class="page-nebula"></span>
+    <span class="page-blob page-blob--1"></span>
+    <span class="page-blob page-blob--2"></span>
+    <span class="page-blob page-blob--3"></span>
+    <span class="page-stars"></span>
+    <span class="page-grain"></span>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Герман — на главную">
+        <span class="logo-mark">G</span>
+        <span class="logo-text">Герман</span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#stack">Стек</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#process">Процесс</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-bg__cosmic"></div>
+        <div class="hero-bg__mesh"></div>
+        <span class="hero-blob hero-blob--a"></span>
+        <span class="hero-blob hero-blob--b"></span>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content" data-reveal>
+          <p class="eyebrow">Герман</p>
+          <h1 id="hero-title">Веб, мобильные продукты и инфраструктура</h1>
+          <p class="hero-role">Full-Stack: интерфейс, backend, сервер и деплой — в одном контуре.</p>
+          <p class="hero-lead">
+            <strong>Laravel</strong>, <strong>Vue</strong>, <strong>Flutter</strong>, <strong>Docker</strong>, <strong>Nginx</strong>, <strong>iOS</strong> / <strong>Android</strong>.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Смотреть проекты</a>
+            <a class="btn btn-ghost" href="#stack">Стек технологий</a>
+          </div>
+        </div>
+        <div class="hero-visual" data-reveal aria-hidden="true">
+          <div class="hero-showcase" id="hero-orbit">
+            <div class="hero-app-icons">
+              <div class="hero-app-icons__row">
+                <div class="hero-app-icon-slot"><span class="hero-app-icon-inner"><img src="assets/projects/pushups-pro-icon.png" width="144" height="144" alt="" loading="lazy" decoding="async"></span></div>
+                <div class="hero-app-icon-slot"><span class="hero-app-icon-inner"><img src="assets/projects/pullups100-icon.png" width="144" height="144" alt="" loading="lazy" decoding="async"></span></div>
+                <div class="hero-app-icon-slot"><span class="hero-app-icon-inner"><img src="assets/projects/kids360-icon.png" width="144" height="144" alt="" loading="lazy" decoding="async"></span></div>
+                <div class="hero-app-icon-slot"><span class="hero-app-icon-inner"><img src="assets/projects/cleanup-ai-icon.png" width="144" height="144" alt="" loading="lazy" decoding="async"></span></div>
+                <div class="hero-app-icon-slot"><span class="hero-app-icon-inner"><img src="assets/projects/metal-calc-icon.png" width="144" height="144" alt="" loading="lazy" decoding="async"></span></div>
+              </div>
+            </div>
+            <div class="hero-orbit">
+            <div class="hero-orbit-core" aria-hidden="true">
+              <div class="hero-tech-ring">
+                <div class="hero-tech-slot" style="--ti: 0">
+                  <div class="hero-tech-slot-inner">
+                    <span class="hero-tech-logo" title="Laravel">
+                      <img src="assets/hero/laravel.svg" width="40" height="40" alt="" decoding="async">
+                    </span>
+                  </div>
+                </div>
+                <div class="hero-tech-slot" style="--ti: 1">
+                  <div class="hero-tech-slot-inner">
+                    <span class="hero-tech-logo" title="Vue.js">
+                      <img src="assets/hero/vue.svg" width="40" height="40" alt="" decoding="async">
+                    </span>
+                  </div>
+                </div>
+                <div class="hero-tech-slot" style="--ti: 2">
+                  <div class="hero-tech-slot-inner">
+                    <span class="hero-tech-logo" title="Flutter">
+                      <img src="assets/hero/flutter.svg" width="40" height="40" alt="" decoding="async">
+                    </span>
+                  </div>
+                </div>
+                <div class="hero-tech-slot" style="--ti: 3">
+                  <div class="hero-tech-slot-inner">
+                    <span class="hero-tech-logo" title="Docker">
+                      <img src="assets/hero/docker.svg" width="40" height="40" alt="" decoding="async">
+                    </span>
+                  </div>
+                </div>
+                <div class="hero-tech-slot" style="--ti: 4">
+                  <div class="hero-tech-slot-inner">
+                    <span class="hero-tech-logo" title="Swift">
+                      <img src="assets/hero/swift.svg" width="40" height="40" alt="" decoding="async">
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <svg class="hero-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.9"/>
+                  <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.85"/>
+                </linearGradient>
+                <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="24"/>
+                </filter>
+              </defs>
+              <g class="hero-svg-rotate">
+                <circle cx="200" cy="200" r="140" stroke="url(#g1)" stroke-width="1" opacity="0.35"/>
+                <circle cx="200" cy="200" r="100" stroke="url(#g1)" stroke-width="1" opacity="0.5"/>
+                <circle cx="200" cy="200" r="60" fill="url(#g1)" opacity="0.12" filter="url(#blur)"/>
+                <path d="M200 60 L240 200 L200 340 L160 200 Z" stroke="url(#g1)" stroke-width="1.2" fill="none" opacity="0.4"/>
+                <rect x="120" y="120" width="160" height="160" rx="12" stroke="url(#g1)" stroke-width="1" fill="none" opacity="0.25" transform="rotate(15 200 200)"/>
+              </g>
+            </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="hero-marquee__track">
+        <span class="hero-marquee__segment">100 · 101 · 102 · Laravel · 400 · 401 · 404 · Docker · 408 · 413 · 429 · Nginx · 502 · 503 · 504 · Android · 409 · 422 · Git · 200 · 201 · 204 · Vue · 301 · 302 · 304 · Flutter · 206 · 304 · 307 · iOS · 500 · 502 · 503 · MySQL · 100 · 200 · 201 · REST API ·</span>
+        <span class="hero-marquee__segment">100 · 101 · 102 · Laravel · 400 · 401 · 404 · Docker · 408 · 413 · 429 · Nginx · 502 · 503 · 504 · Android · 409 · 422 · Git · 200 · 201 · 204 · Vue · 301 · 302 · 304 · Flutter · 206 · 304 · 307 · iOS · 500 · 502 · 503 · MySQL · 100 · 200 · 201 · REST API ·</span>
+      </div>
+    </div>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 id="about-title">Подход и ценность</h2>
+          <p class="section-lead">Системы под ключ, без лишней воды.</p>
+        </header>
+        <div class="about-grid about-grid--tilt">
+          <div class="about-text" data-reveal>
+            <p>
+              В разработке с <strong>2021 года</strong>. Веб-платформы, админки, API, мобильные клиенты и то, что крутится на сервере — не «страницы», а продукт.
+            </p>
+            <p class="muted">
+              Цепочка от требований до релиза в одних руках — меньше потерь между фронтом и бэком.
+            </p>
+          </div>
+          <ul class="about-cards" data-reveal>
+            <li class="glass-card">
+              <h3>Веб-платформы</h3>
+              <p>Кабинеты, роли, отчёты — Laravel и Vue.</p>
+            </li>
+            <li class="glass-card">
+              <h3>Мобильные приложения</h3>
+              <p>Flutter и нативные iOS / Android.</p>
+            </li>
+            <li class="glass-card">
+              <h3>DevOps-готовность</h3>
+              <p>Docker, Nginx, повторяемые деплои.</p>
+            </li>
+            <li class="glass-card">
+              <h3>Архитектура</h3>
+              <p>Модульность, API, БД — с запасом на рост.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stack" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 id="stack-title">Стек технологий</h2>
+          <p class="section-lead">Backend, frontend, mobile, сервер.</p>
+        </header>
+        <div class="stack-grid stack-grid--tilt">
+          <article class="stack-card" data-reveal>
+            <h3>Backend</h3>
+            <ul class="tag-list">
+              <li>Laravel</li>
+              <li>PHP</li>
+              <li>REST API</li>
+              <li>MySQL</li>
+            </ul>
+          </article>
+          <article class="stack-card" data-reveal>
+            <h3>Frontend</h3>
+            <ul class="tag-list">
+              <li>Vue</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </article>
+          <article class="stack-card" data-reveal>
+            <h3>Mobile</h3>
+            <ul class="tag-list">
+              <li>Flutter</li>
+              <li>iOS</li>
+              <li>Android</li>
+            </ul>
+          </article>
+          <article class="stack-card" data-reveal>
+            <h3>DevOps</h3>
+            <ul class="tag-list">
+              <li>Docker</li>
+              <li>Nginx</li>
+              <li>Деплой</li>
+              <li>Настройка сервера</li>
+            </ul>
+          </article>
+          <article class="stack-card" data-reveal>
+            <h3>Инструменты и процесс</h3>
+            <ul class="tag-list">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>Адаптивный UI</li>
+              <li>Архитектура проекта</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 id="projects-title">Избранные проекты</h2>
+          <p class="section-lead">Реальные кейсы: веб, мобилки, утилиты.</p>
+        </header>
+        <div class="projects-list">
+          <article class="project-card" data-reveal data-project-card>
+            <div class="project-media project-media--gallery">
+              <img class="project-media__hero" src="assets/projects/marketplace-catalog.png" alt="Каталог: приложения и аккаунты разработчиков на маркетплейсе" width="1400" height="788" loading="lazy">
+              <div class="project-media__thumbs">
+                <img src="assets/projects/marketplace-admin.png" alt="Админ-панель: дашборд, модерация и аналитика" width="960" height="600" loading="lazy">
+                <img src="assets/projects/marketplace-supplier.png" alt="Кабинет поставщика: товары, модерация и продажи" width="960" height="600" loading="lazy">
+              </div>
+            </div>
+            <div class="project-card__body">
+              <header>
+                <span class="project-type">Маркетплейс</span>
+                <h3>Площадка продажи приложений и аккаунтов разработчиков</h3>
+              </header>
+              <p class="project-desc">Маркетплейс приложений и аккаунтов разработчиков: каталог, модерация, кабинет поставщика с метриками.</p>
+              <div class="project-block">
+                <h4>Задачи</h4>
+                <p>Типы товаров, модерация, роли, заказы и оплата, дашборды админа и поставщика.</p>
+              </div>
+              <div class="project-block">
+                <h4>Стек</h4>
+                <p>Laravel, Vue, MySQL, Docker, Nginx.</p>
+              </div>
+              <p class="project-result"><strong>Результат:</strong> одна платформа для легальной сделки и контроля контента.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-project-card>
+            <div class="project-media project-media--gallery">
+              <img class="project-media__hero" src="assets/projects/lifecycle-projects.png" alt="Портфель проектов: GDD, дизайн, билд, движок Unity, стадии и сложность" width="1400" height="788" loading="lazy">
+              <div class="project-media__thumbs project-media__thumbs--quad">
+                <img src="assets/projects/lifecycle-publication.png" alt="Публикации в сторах: статусы модерации, консоли разработчика, причины отклонений" width="960" height="600" loading="lazy">
+                <img src="assets/projects/lifecycle-aso.png" alt="ASO-дашборд: приложения, ключевые слова, позиции в выдаче" width="960" height="600" loading="lazy">
+                <img src="assets/projects/lifecycle-competitors.png" alt="Аналитика конкурентов по ключам и магазинам" width="960" height="600" loading="lazy">
+                <img src="assets/projects/lifecycle-promotion.png" alt="Продвижение: кампании по ключевым словам и установкам" width="960" height="600" loading="lazy">
+              </div>
+            </div>
+            <div class="project-card__body">
+              <header>
+                <span class="project-type">Платформа · мобильные игры и приложения</span>
+                <h3>Сервис полного жизненного цикла приложения</h3>
+              </header>
+              <p class="project-desc">Жизненный цикл приложения: GDD, дизайн, Unity, публикация в сторах, ASO и продвижение по ключам.</p>
+              <div class="project-block">
+                <h4>Задачи</h4>
+                <p>Стадии проектов, публикации и статусы модерации, ASO и конкуренты, кампании keyword installs.</p>
+              </div>
+              <div class="project-block">
+                <h4>Стек</h4>
+                <p>Laravel, Vue, MySQL, Docker, Nginx; интеграции со сторами и внутренними процессами команды.</p>
+              </div>
+              <p class="project-result"><strong>Результат:</strong> один интерфейс от разработки до маркетинга, без разрозненных таблиц.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-project-card>
+            <div class="project-media project-media--gallery">
+              <img class="project-media__hero" src="assets/projects/taskmanager-dashboard.png" alt="Личный рабочий стол: активные задачи, планер внимания, просрочки и задачи в работе" width="1400" height="788" loading="lazy">
+              <div class="project-media__thumbs">
+                <img src="assets/projects/taskmanager-kpi.png" alt="Аналитика для руководителей: блокировки, тепловая карта по KPI, воронка по статусам" width="960" height="600" loading="lazy">
+                <img src="assets/projects/taskmanager-team-list.png" alt="Задачи команды: отборы, роли, таблица задач" width="960" height="600" loading="lazy">
+              </div>
+            </div>
+            <div class="project-card__body">
+              <header>
+                <span class="project-type">Корпоративный Task Manager</span>
+                <h3>Таск-менеджер для компании с ролями и аналитикой</h3>
+              </header>
+              <p class="project-desc">Корпоративный таск-менеджер: дашборд рисков, задачи команды, аналитика для руководства.</p>
+              <div class="project-block">
+                <h4>Задачи</h4>
+                <p>Роли (сотрудник, руководитель, операционный, директор, админ), жизненный цикл задачи, отборы, отчёты без ручной сводки.</p>
+              </div>
+              <div class="project-block">
+                <h4>Стек</h4>
+                <p>Laravel, Vue, MySQL, Docker, Nginx.</p>
+              </div>
+              <p class="project-result"><strong>Результат:</strong> одна точка правды по задачам и приоритетам для всей компании.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-project-card>
+            <div class="project-media project-media--gallery project-media--app-showcase">
+              <div class="project-media__icon-wrap">
+                <img class="project-media__app-icon" src="assets/projects/pushups-pro-icon.png" alt="Иконка Push-Ups: Pro" width="512" height="512" loading="lazy">
+              </div>
+              <div class="project-media__thumbs">
+                <img src="assets/projects/pushups-pro-promo-home.png" alt="Push-Ups: Pro — главный экран и программа тренировок" width="800" height="1200" loading="lazy">
+                <img src="assets/projects/pushups-pro-promo-progress.png" alt="Push-Ups: Pro — прогресс и цели по дням" width="800" height="1200" loading="lazy">
+              </div>
+            </div>
+            <div class="project-card__body">
+              <header>
+                <span class="project-type">iOS · Health &amp; Fitness</span>
+                <h3>Push-Ups: Pro — тренер по отжиманиям</h3>
+              </header>
+              <p class="project-desc">iPhone: программы отжиманий, прогресс, стрики, таймеры; тёмный UI и промо под App Store.</p>
+              <div class="project-block">
+                <h4>Задачи</h4>
+                <p>Логика тренировок, история, подписка Pro, промо-скрины.</p>
+              </div>
+              <div class="project-block">
+                <h4>Стек</h4>
+                <p>iOS (iPhone), публикация в App Store; UI, иконка и промо-материалы для витрин (в т.ч. под оформление в Google).</p>
+              </div>
+              <div class="project-block">
+                <h4>Ссылка</h4>
+                <p><a class="project-external-link" href="https://apps.apple.com/us/app/push-ups-pro/id6755532435" target="_blank" rel="noopener noreferrer">Push-Ups: Pro в App Store (US)</a></p>
+              </div>
+              <p class="project-result"><strong>Результат:</strong> план на сегодня сразу на экране — быстрее старт тренировки.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-project-card>
+            <div class="project-media project-media--gallery project-media--app-showcase project-media--accent-mint">
+              <div class="project-media__icon-wrap">
+                <img class="project-media__app-icon" src="assets/projects/pullups100-icon.png" alt="Иконка 100 Pull-Ups Challenge" width="512" height="512" loading="lazy">
+              </div>
+              <div class="project-media__thumbs project-media__thumbs--triple">
+                <img src="assets/projects/pullups100-promo-1.png" alt="100 Pull-Ups Challenge — выбор программы и уровней" width="800" height="1200" loading="lazy">
+                <img src="assets/projects/pullups100-promo-2.png" alt="100 Pull-Ups Challenge — трекер и план тренировки на сегодня" width="800" height="1200" loading="lazy">
+                <img src="assets/projects/pullups100-promo-3.png" alt="100 Pull-Ups Challenge — промо: цель от 0 до 100 подтягиваний" width="800" height="1200" loading="lazy">
+              </div>
+            </div>
+            <div class="project-card__body">
+              <header>
+                <span class="project-type">iOS · Health &amp; Fitness</span>
+                <h3>100 Pull-Ups Challenge — трекер и программы подтягиваний</h3>
+              </header>
+              <p class="project-desc">Подтягивания: уровни, негативы, план на день, прогресс и стрики; промо под App Store.</p>
+              <div class="project-block">
+                <h4>Задачи</h4>
+                <p>Программы, трекер, прогрессия нагрузки, достижения, визуалы для стора.</p>
+              </div>
+              <div class="project-block">
+                <h4>Стек</h4>
+                <p>iOS (iPhone), публикация в App Store; UI, иконка и промо-материалы для витрины.</p>
+              </div>
+              <div class="project-block">
+                <h4>Ссылка</h4>
+                <p><a class="project-external-link" href="https://apps.apple.com/us/app/100-pull-ups-challenge/id6755483206" target="_blank" rel="noopener noreferrer">100 Pull-Ups Challenge в App Store (US)</a></p>
+              </div>
+              <p class="project-result"><strong>Результат:</strong> понятный путь от первых повторов к устойчивому объёму.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-project-card>
+            <div class="project-media project-media--gallery project-media--app-showcase project-media--accent-lilac">
+              <div class="project-media__icon-wrap">
+                <img class="project-media__app-icon" src="assets/projects/kids360-icon.png" alt="Иконка Parental control kids360" width="512" height="512" loading="lazy">
+              </div>
+              <div class="project-media__thumbs">
+                <img src="assets/projects/kids360-promo-1.png" alt="KidsSafe — настройки, семья, подписка" width="800" height="1200" loading="lazy">
+                <img src="assets/projects/kids360-promo-2.png" alt="KidsSafe — выбор роли родитель или ребёнок при онбординге" width="800" height="1200" loading="lazy">
+              </div>
+            </div>
+            <div class="project-card__body">
+              <header>
+                <span class="project-type">iOS · Utilities · Family</span>
+                <h3>Parental control — kids360 (KidsSafe)</h3>
+              </header>
+              <p class="project-desc">Родительский контроль: время на экране, роли, семья, PIN; UI kids360 / KidsSafe.</p>
+              <div class="project-block">
+                <h4>Задачи</h4>
+                <p>Онбординг, настройки семьи, подписка, промо в едином бренде.</p>
+              </div>
+              <div class="project-block">
+                <h4>Стек</h4>
+                <p>iOS (iPhone, iPad), публикация в App Store; UI, иконка и промо; связка с дочерним приложением на Android.</p>
+              </div>
+              <div class="project-block">
+                <h4>Ссылка</h4>
+                <p><a class="project-external-link" href="https://apps.apple.com/us/app/parental-control-app-kidssafe/id6755877531" target="_blank" rel="noopener noreferrer">Parental control app — KidsSafe в App Store (US)</a></p>
+              </div>
+              <p class="project-result"><strong>Результат:</strong> правила и статистика в одном месте — проще договориться о режиме.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-project-card>
+            <div class="project-media project-media--gallery project-media--app-showcase project-media--accent-sky">
+              <div class="project-media__icon-wrap">
+                <img class="project-media__app-icon" src="assets/projects/cleanup-ai-icon.png" alt="Иконка AI - Clean Up Phone" width="512" height="512" loading="lazy">
+              </div>
+              <div class="project-media__thumbs">
+                <img src="assets/projects/cleanup-ai-promo-1.png" alt="AI Clean Up Phone — очистка календаря от старых событий" width="800" height="1200" loading="lazy">
+                <img src="assets/projects/cleanup-ai-promo-2.png" alt="AI Clean Up Phone — оптимизация хранилища iPhone" width="800" height="1200" loading="lazy">
+              </div>
+            </div>
+            <div class="project-card__body">
+              <header>
+                <span class="project-type">iOS · Utilities</span>
+                <h3>AI - Clean Up Phone</h3>
+              </header>
+              <p class="project-desc">Очистка iPhone: дубликаты фото, календарь, контакты; подтверждение перед удалением.</p>
+              <div class="project-block">
+                <h4>Задачи</h4>
+                <p>Smart Clean по модулям, онбординг, Premium, промо для стора.</p>
+              </div>
+              <div class="project-block">
+                <h4>Стек</h4>
+                <p>iOS (iPhone), публикация в App Store; UI, иконка и промо-материалы.</p>
+              </div>
+              <div class="project-block">
+                <h4>Ссылка</h4>
+                <p><a class="project-external-link" href="https://apps.apple.com/us/app/ai-clean-up-phone/id6758375184" target="_blank" rel="noopener noreferrer">AI - Clean Up Phone в App Store (US)</a></p>
+              </div>
+              <p class="project-result"><strong>Результат:</strong> память быстрее, без ручного перебора файлов.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-project-card>
+            <div class="project-media project-media--gallery project-media--app-showcase project-media--accent-ember">
+              <div class="project-media__icon-wrap">
+                <img class="project-media__app-icon" src="assets/projects/metal-calc-icon.png" alt="Иконка Metal Calculation" width="512" height="512" loading="lazy">
+              </div>
+              <div class="project-media__thumbs">
+                <img src="assets/projects/metal-calc-promo-1.png" alt="Metal Calculation — выбор профиля проката" width="800" height="1200" loading="lazy">
+                <img src="assets/projects/metal-calc-promo-2.png" alt="Metal Calculation — расчёт трубы: материал, размеры, цена за кг" width="800" height="1200" loading="lazy">
+              </div>
+            </div>
+            <div class="project-card__body">
+              <header>
+                <span class="project-type">iOS · Utilities</span>
+                <h3>Metal Calculation — калькулятор металлопроката</h3>
+              </header>
+              <p class="project-desc">Калькулятор проката: профили, размеры, плотность, цена за кг — вес и сумма; офлайн.</p>
+              <div class="project-block">
+                <h4>Задачи</h4>
+                <p>Формулы по типам, справочник материалов, схемы размеров, премиум, история.</p>
+              </div>
+              <div class="project-block">
+                <h4>Стек</h4>
+                <p>iOS (iPhone), публикация в App Store; UI, иконка и экраны калькуляции.</p>
+              </div>
+              <div class="project-block">
+                <h4>Ссылка</h4>
+                <p><a class="project-external-link" href="https://apps.apple.com/us/app/metal-calculation/id6753984037" target="_blank" rel="noopener noreferrer">Metal Calculation в App Store (US)</a></p>
+              </div>
+              <p class="project-result"><strong>Результат:</strong> меньше ошибок в весе и сумме при закупке металла.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 id="services-title">Услуги</h2>
+          <p class="section-lead">Один контур: от кода до сервера.</p>
+        </header>
+        <ul class="services-grid">
+          <li class="service-card" data-reveal>
+            <h3>Веб-разработка</h3>
+            <p>Быстрые интерфейсы и поддерживаемый код.</p>
+          </li>
+          <li class="service-card" data-reveal>
+            <h3>Админки и CRM</h3>
+            <p>Учёт, роли, отчёты для операционки.</p>
+          </li>
+          <li class="service-card" data-reveal>
+            <h3>Мобильные приложения на Flutter</h3>
+            <p>iOS и Android из одной кодовой базы.</p>
+          </li>
+          <li class="service-card" data-reveal>
+            <h3>API и архитектура backend</h3>
+            <p>Контракты, безопасность, миграции, задел под интеграции.</p>
+          </li>
+          <li class="service-card" data-reveal>
+            <h3>Деплой и сервер</h3>
+            <p>Nginx, Docker, повторяемые релизы.</p>
+          </li>
+          <li class="service-card" data-reveal>
+            <h3>Сопровождение и масштабирование</h3>
+            <p>Доработки, узкие места, рост нагрузки.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 id="experience-title">Опыт в цифрах и фактах</h2>
+          <p class="section-lead">Факты из практики, без обещаний.</p>
+        </header>
+        <div class="stats-grid">
+          <div class="stat-card" data-reveal>
+            <p class="stat-value">С 2021 года</p>
+            <p class="stat-label">Продукты под ключ: сроки и стабильность.</p>
+          </div>
+          <div class="stat-card" data-reveal>
+            <p class="stat-value">Веб и мобилки</p>
+            <p class="stat-label">Админки, API, сторы, корпоративные сценарии.</p>
+          </div>
+          <div class="stat-card" data-reveal>
+            <p class="stat-value">Автоматизация</p>
+            <p class="stat-label">Внутренние сервисы вместо ручной рутины.</p>
+          </div>
+          <div class="stat-card" data-reveal>
+            <p class="stat-value">Полный цикл</p>
+            <p class="stat-label">От задачи до сервера и эволюции продукта.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 id="process-title">Как строится работа</h2>
+          <p class="section-lead">Этапы без сюрпризов посередине.</p>
+        </header>
+        <ol class="process-steps">
+          <li class="process-step" data-reveal>
+            <span class="step-num">1</span>
+            <div>
+              <h3>Анализ задачи</h3>
+              <p>Цели, ограничения, интеграции, критерии успеха.</p>
+            </div>
+          </li>
+          <li class="process-step" data-reveal>
+            <span class="step-num">2</span>
+            <div>
+              <h3>План архитектуры</h3>
+              <p>Структура, стек, этапы — с запасом на рост.</p>
+            </div>
+          </li>
+          <li class="process-step" data-reveal>
+            <span class="step-num">3</span>
+            <div>
+              <h3>Интерфейс и логика</h3>
+              <p>UI и backend параллельно, где это ускоряет проверку.</p>
+            </div>
+          </li>
+          <li class="process-step" data-reveal>
+            <span class="step-num">4</span>
+            <div>
+              <h3>Тестирование и оптимизация</h3>
+              <p>Сценарии, производительность, рефакторинг.</p>
+            </div>
+          </li>
+          <li class="process-step" data-reveal>
+            <span class="step-num">5</span>
+            <div>
+              <h3>Запуск и сопровождение</h3>
+              <p>Деплой, базовые метрики, доработки по фидбеку.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section cta" id="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-inner glass-panel" data-reveal>
+          <h2 id="cta-title">Сложные веб- и мобильные продукты — в одном контуре</h2>
+          <p class="cta-text">
+            Интерфейс, backend и инфраструктура — понятно бизнесу и удобно развивать.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#projects">К проектам</a>
+            <a class="btn btn-ghost" href="#top">Наверх</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">Портфолио разработчика · Герман</p>
+      <p class="footer-meta">2026 · Laravel · Vue · Flutter · Docker · Nginx</p>
+      <p class="footer-tech">Сделано на HTML, CSS и JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
