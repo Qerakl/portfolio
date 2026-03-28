@@ -16,6 +16,7 @@
   --radius: 14px;
   --radius-sm: 10px;
   --header-h: 72px;
+  --nav-overlay-top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
   --transition: 0.25s ease;
   --font: system-ui, -apple-system, "Segoe UI", "Noto Sans", "Roboto", "Helvetica Neue", Arial, sans-serif;
   --project-card-bg: rgba(17, 20, 31, 0.97);
@@ -346,6 +347,7 @@ p:last-child {
 }
 
 /* === Header === */
+/* Blur на ::before: иначе backdrop-filter у предка ломает position:fixed у моб. меню (WebKit). */
 .site-header {
   position: sticky;
   top: 0;
@@ -355,6 +357,25 @@ p:last-child {
   height: auto;
   display: flex;
   align-items: center;
+  background: transparent;
+}
+
+.site-header__shell {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background: linear-gradient(180deg, rgba(6, 8, 14, 0.94) 0%, rgba(10, 12, 18, 0.86) 100%);
   border-bottom: 1px solid rgba(79, 143, 255, 0.14);
   backdrop-filter: blur(14px);
@@ -365,8 +386,9 @@ p:last-child {
 }
 
 @supports not (backdrop-filter: blur(12px)) {
-  .site-header {
+  .site-header__shell::before {
     background: rgba(10, 12, 18, 0.96);
+    backdrop-filter: none;
   }
 }
 
@@ -375,6 +397,8 @@ p:last-child {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .site-header .container.header-inner {
@@ -533,10 +557,13 @@ body.nav-open .nav-toggle-bar:nth-child(3) {
 
   .site-nav {
     position: fixed;
-    top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+    top: var(--nav-overlay-top);
     right: 0;
-    bottom: 0;
     left: 0;
+    height: calc(100vh - var(--nav-overlay-top));
+    height: calc(100dvh - var(--nav-overlay-top));
+    max-height: calc(100svh - var(--nav-overlay-top));
+    bottom: auto;
     background: rgba(10, 12, 18, 0.97);
     padding: 1.5rem;
     padding-bottom: max(1.5rem, calc(1rem + env(safe-area-inset-bottom, 0px)));
@@ -546,6 +573,8 @@ body.nav-open .nav-toggle-bar:nth-child(3) {
     border-top: 1px solid rgba(139, 92, 246, 0.15);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    z-index: 120;
   }
 
   body.nav-open .site-nav {
@@ -1411,33 +1440,18 @@ main > section.section:nth-of-type(even) {
 
 @media (max-width: 960px) {
   .stack-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.75rem;
-    overflow-x: auto;
-    overflow-y: visible;
-    padding: 0.2rem 0 0.85rem;
-    margin-inline: calc(-1 * min(1rem, 4vw));
-    padding-inline: min(1rem, 4vw);
-    scroll-snap-type: x proximity;
-    scroll-padding-inline: min(1rem, 4vw);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-color: rgba(79, 143, 255, 0.35) transparent;
-  }
-
-  .stack-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .stack-grid::-webkit-scrollbar-thumb {
-    background: rgba(79, 143, 255, 0.35);
-    border-radius: 999px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    overflow-x: visible;
+    margin-inline: 0;
+    padding: 0;
+    max-width: none;
   }
 
   .stack-card {
-    flex: 0 0 min(11.5rem, 78vw);
-    scroll-snap-align: start;
-    max-width: 14rem;
+    max-width: none;
+    width: 100%;
   }
 }
 
