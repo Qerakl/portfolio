@@ -32,10 +32,6 @@
         setNavOpen(false);
       }
     });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setNavOpen(false);
-    });
   }
 
   navLinks.forEach(function (link) {
@@ -109,9 +105,19 @@
     });
   }
 
-  /* Active nav link */
-  var sectionIds = ["home", "about", "stack", "projects", "services", "process"];
-  var sections = sectionIds
+  /* Scroll progress bar */
+  var progressFill = document.querySelector(".scroll-progress__fill");
+  function updateScrollProgress() {
+    if (!progressFill) return;
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    var p = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progressFill.style.transform = "scaleX(" + Math.min(1, Math.max(0, p)) + ")";
+  }
+
+  /* Active nav: IntersectionObserver + низкий ratio — fallback по scroll */
+  var navSectionIds = ["home", "about", "stack", "projects", "services", "experience", "process", "play"];
+  var sectionsForNav = navSectionIds
     .map(function (id) {
       return document.getElementById(id);
     })
@@ -125,20 +131,12 @@
     }
   });
 
-  var ticking = false;
-  function updateActiveNav() {
-    ticking = false;
-    var scrollY = window.scrollY;
-    var offset = (header && header.offsetHeight) || 72;
-    var activeId = "home";
-    for (var i = 0; i < sections.length; i++) {
-      var sec = sections[i];
-      if (!sec) continue;
-      var top = sec.getBoundingClientRect().top + scrollY - offset - 24;
-      if (scrollY >= top) {
-        activeId = sec.id;
-      }
-    }
+  var ratios = {};
+  navSectionIds.forEach(function (id) {
+    ratios[id] = 0;
+  });
+
+  function setActiveLink(activeId) {
     Object.keys(linkById).forEach(function (id) {
       var link = linkById[id];
       if (link) {
@@ -147,16 +145,160 @@
     });
   }
 
-  function onScroll() {
-    if (!ticking) {
-      ticking = true;
-      window.requestAnimationFrame(updateActiveNav);
+  function scrollFallbackActive() {
+    var scrollY = window.scrollY;
+    var offset = (header && header.offsetHeight) || 72;
+    var activeId = "home";
+    for (var i = 0; i < sectionsForNav.length; i++) {
+      var sec = sectionsForNav[i];
+      if (!sec) continue;
+      var top = sec.getBoundingClientRect().top + scrollY - offset - 24;
+      if (scrollY >= top) {
+        activeId = sec.id;
+      }
+    }
+    setActiveLink(activeId);
+  }
+
+  function applyActiveNav() {
+    var bestId = "home";
+    var bestR = 0;
+    navSectionIds.forEach(function (id) {
+      var r = ratios[id] || 0;
+      if (r > bestR) {
+        bestR = r;
+        bestId = id;
+      }
+    });
+    if (bestR < 0.06) {
+      scrollFallbackActive();
+    } else {
+      setActiveLink(bestId);
     }
   }
 
-  if (sections.length) {
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
-    updateActiveNav();
+  var navScrollTicking = false;
+  function onScrollNavAndProgress() {
+    updateScrollProgress();
+    if (!navScrollTicking) {
+      navScrollTicking = true;
+      window.requestAnimationFrame(function () {
+        navScrollTicking = false;
+        applyActiveNav();
+      });
+    }
   }
+
+  if (sectionsForNav.length && "IntersectionObserver" in window) {
+    var ioNav = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          var id = en.target.id;
+          if (navSectionIds.indexOf(id) >= 0) {
+            ratios[id] = en.isIntersecting ? en.intersectionRatio : 0;
+          }
+        });
+        applyActiveNav();
+      },
+      {
+        root: null,
+        rootMargin: "-8% 0px -40% 0px",
+        threshold: [0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.75, 1],
+      }
+    );
+    sectionsForNav.forEach(function (sec) {
+      ioNav.observe(sec);
+    });
+    window.addEventListener("scroll", onScrollNavAndProgress, { passive: true });
+    window.addEventListener("resize", function () {
+      updateScrollProgress();
+      applyActiveNav();
+    }, { passive: true });
+    updateScrollProgress();
+    applyActiveNav();
+  } else if (sectionsForNav.length) {
+    window.addEventListener("scroll", onScrollNavAndProgress, { passive: true });
+    window.addEventListener("resize", onScrollNavAndProgress, { passive: true });
+    updateScrollProgress();
+    scrollFallbackActive();
+  } else {
+    updateScrollProgress();
+  }
+
+  /* Lightbox for project gallery images */
+  var lightbox = document.getElementById("lightbox");
+  var lightboxImg = lightbox ? lightbox.querySelector(".lightbox__img") : null;
+  var lightboxClose = lightbox ? lightbox.querySelector(".lightbox__close") : null;
+
+  function lightboxOpen() {
+    return lightbox && !lightbox.hasAttribute("hidden");
+  }
+
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImg || !src) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.removeAttribute("hidden");
+    body.style.overflow = "hidden";
+    if (lightboxClose) {
+      lightboxClose.focus();
+    }
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.setAttribute("hidden", "");
+    lightboxImg.removeAttribute("src");
+    lightboxImg.alt = "";
+    body.style.overflow = "";
+  }
+
+  var mainEl = document.getElementById("main");
+  if (mainEl) {
+    mainEl.addEventListener(
+      "click",
+      function (e) {
+        var t = e.target;
+        if (!t || t.tagName !== "IMG") return;
+        var media = t.closest(".project-media--gallery");
+        if (!media) return;
+        var src = t.currentSrc || t.src;
+        if (!src) return;
+        e.preventDefault();
+        openLightbox(src, t.getAttribute("alt") || "");
+      },
+      true
+    );
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener("click", function (e) {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
+  if (lightboxImg) {
+    lightboxImg.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (lightboxOpen()) {
+      closeLightbox();
+      e.preventDefault();
+      return;
+    }
+    setNavOpen(false);
+  });
 })();

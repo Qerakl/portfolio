@@ -6,10 +6,27 @@
   <meta name="description" content="Герман: веб и мобильные продукты с 2021 года. Laravel, Vue, Flutter, Docker, Nginx.">
   <meta name="theme-color" content="#05070f">
   <title>Веб и мобильная разработка · Герман</title>
+  <link rel="canonical" href="https://qerakl.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qerakl.github.io/portfolio/">
+  <meta property="og:title" content="Веб и мобильная разработка · Герман">
+  <meta property="og:description" content="Full-stack: Laravel, Vue, Flutter, Docker, Nginx. Портфолио и кейсы.">
+  <meta property="og:image" content="https://qerakl.github.io/portfolio/assets/projects/marketplace-catalog.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Веб и мобильная разработка · Герман">
+  <meta name="twitter:description" content="Full-stack: Laravel, Vue, Flutter, Docker, Nginx. Портфолио и кейсы.">
+  <meta name="twitter:image" content="https://qerakl.github.io/portfolio/assets/projects/marketplace-catalog.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">К основному содержимому</a>
+  <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__fill"></span></div>
   <div class="page-deco" aria-hidden="true">
     <span class="page-grid"></span>
     <span class="page-nebula"></span>
@@ -39,7 +56,9 @@
             <li><a href="#stack">Стек</a></li>
             <li><a href="#projects">Проекты</a></li>
             <li><a href="#services">Услуги</a></li>
+            <li><a href="#experience">Опыт</a></li>
             <li><a href="#process">Процесс</a></li>
+            <li><a href="#play">Игра</a></li>
           </ul>
         </nav>
       </div>
@@ -163,6 +182,7 @@
             </p>
             <p class="muted">
               Цепочка от требований до релиза в одних руках — меньше потерь между фронтом и бэком.
+              <a class="inline-anchor" href="#experience">Цифры и факты — в разделе «Опыт».</a>
             </p>
           </div>
           <ul class="about-cards" data-reveal>
@@ -501,26 +521,44 @@
         </header>
         <ul class="services-grid">
           <li class="service-card" data-reveal>
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M3 16h18M9 20h6"/></svg>
+            </span>
             <h3>Веб-разработка</h3>
             <p>Быстрые интерфейсы и поддерживаемый код.</p>
           </li>
           <li class="service-card" data-reveal>
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </span>
             <h3>Админки и CRM</h3>
             <p>Учёт, роли, отчёты для операционки.</p>
           </li>
           <li class="service-card" data-reveal>
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg>
+            </span>
             <h3>Мобильные приложения на Flutter</h3>
             <p>iOS и Android из одной кодовой базы.</p>
           </li>
           <li class="service-card" data-reveal>
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8l8 4 8-4M4 8v8l8 4 8-4V8"/><path d="M12 4v16"/></svg>
+            </span>
             <h3>API и архитектура backend</h3>
             <p>Контракты, безопасность, миграции, задел под интеграции.</p>
           </li>
           <li class="service-card" data-reveal>
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+            </span>
             <h3>Деплой и сервер</h3>
             <p>Nginx, Docker, повторяемые релизы.</p>
           </li>
           <li class="service-card" data-reveal>
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
             <h3>Сопровождение и масштабирование</h3>
             <p>Доработки, узкие места, рост нагрузки.</p>
           </li>
@@ -536,22 +574,41 @@
         </header>
         <div class="stats-grid">
           <div class="stat-card" data-reveal>
-            <p class="stat-value">С 2021 года</p>
-            <p class="stat-label">Продукты под ключ: сроки и стабильность.</p>
+            <p class="stat-number" aria-hidden="true">5+</p>
+            <p class="stat-value">лет в разработке</p>
+            <p class="stat-label">С 2021: продукты под ключ, сроки и стабильность.</p>
           </div>
           <div class="stat-card" data-reveal>
-            <p class="stat-value">Веб и мобилки</p>
-            <p class="stat-label">Админки, API, сторы, корпоративные сценарии.</p>
+            <p class="stat-number" aria-hidden="true">8+</p>
+            <p class="stat-value">кейсов в портфолио</p>
+            <p class="stat-label">Веб-платформы, мобильные приложения, корпоративные сценарии.</p>
           </div>
           <div class="stat-card" data-reveal>
-            <p class="stat-value">Автоматизация</p>
+            <p class="stat-number" aria-hidden="true">∞</p>
+            <p class="stat-value">автоматизация процессов</p>
             <p class="stat-label">Внутренние сервисы вместо ручной рутины.</p>
           </div>
           <div class="stat-card" data-reveal>
-            <p class="stat-value">Полный цикл</p>
-            <p class="stat-label">От задачи до сервера и эволюции продукта.</p>
+            <p class="stat-number" aria-hidden="true">1</p>
+            <p class="stat-value">контур от UI до сервера</p>
+            <p class="stat-label">От задачи до деплоя и эволюции продукта.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 id="testimonials-title">С чем приходят на проекты</h2>
+          <p class="section-lead">Не вымышленный отзыв, а типичный запрос с брифов.</p>
+        </header>
+        <figure class="testimonial-card" data-reveal>
+          <blockquote class="testimonial-card__quote">
+            <p>Нужен один человек на контур: интерфейс, backend и сервер — без размытия ответственности между командами.</p>
+          </blockquote>
+          <figcaption class="testimonial-card__cite">Формулировка из практики кастомных платформ и продуктов</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -601,6 +658,42 @@
       </div>
     </section>
 
+    <section class="section mini-game" id="play" aria-labelledby="play-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 id="play-title">Метеорный дождь</h2>
+          <p class="section-lead">Пауза между разделами — уклоняйся, пока можешь.</p>
+        </header>
+        <div class="mini-game__wrap" data-reveal>
+          <p id="mini-game-reduced-note" class="mini-game__reduced-note" hidden>
+            Анимация в игре отключена: в системе включено «уменьшить движение».
+          </p>
+          <div class="mini-game__shell" id="mini-game-shell">
+            <div class="mini-game__toolbar">
+              <span class="mini-game__score-wrap">
+                Счёт: <span id="mini-game-score" class="mini-game__score" aria-live="polite">0</span>
+              </span>
+              <div class="mini-game__btns">
+                <button type="button" class="btn btn-primary mini-game__btn" id="mini-game-start">Старт</button>
+                <button type="button" class="btn btn-ghost mini-game__btn" id="mini-game-pause" disabled>Пауза</button>
+                <button type="button" class="btn btn-ghost mini-game__btn" id="mini-game-retry" hidden>Ещё раз</button>
+              </div>
+            </div>
+            <div class="mini-game__frame">
+              <canvas
+                id="mini-game-canvas"
+                width="360"
+                height="480"
+                role="img"
+                aria-label="Игровое поле: метеоры падают сверху. Управление стрелками влево-вправо или касанием."
+              ></canvas>
+            </div>
+            <p class="mini-game__hint">Стрелки ← → или веди пальцем по полю</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section cta" id="cta" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-inner glass-panel" data-reveal>
@@ -625,6 +718,12 @@
     </div>
   </footer>
 
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр изображения" hidden>
+    <button type="button" class="lightbox__close" aria-label="Закрыть">&times;</button>
+    <img class="lightbox__img" src="" alt="">
+  </div>
+
   <script src="script.js"></script>
+  <script src="mini-game.js" defer></script>
 </body>
 </html>
